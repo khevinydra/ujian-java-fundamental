@@ -1,0 +1,45 @@
+package com.juaracoding.khevinujian1.jf.ujian1;
+
+import java.util.Scanner;
+
+public class ProgramPenentuSalarySQA {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input nama kandidat
+        System.out.print("MASUKKAN NAMA KANDIDAT: ");
+        String nama = input.nextLine();
+
+        // Input nilai kandidat
+        System.out.print("MASUKKAN NILAI KANDIDAT (0-10): ");
+        int nilaiKandidat = input.nextInt();
+
+        // Deklarasi variabel untuk divisi, level, dan salary
+        String divisi = "";
+        String level = "";
+        int salary = 0;
+
+        // Logika penentuan divisi, level, dan salary berdasarkan nilai
+        if (nilaiKandidat >= 8) {
+            divisi = "QA Automation";
+            level = "Senior";
+            salary = 10000000; // Gaji Senior QA Automation
+        } else if (nilaiKandidat >= 6) {
+            divisi = "QA Manual";
+            level = "Junior";
+            salary = 6000000; // Gaji Junior QA Manual
+        } else {
+            divisi = "QA Manual";
+            level = "Trainee";
+            salary = 4000000; // Gaji Trainee QA Manual
+        }
+
+        // Output hasil
+        System.out.println("\nNAMA = " + nama);
+        System.out.println("DIVISI = " + divisi);
+        System.out.println("LEVEL = " + level);
+        System.out.println("SALARY/MONTH = IDR. " + salary);
+
+        input.close();
+    }
+}
