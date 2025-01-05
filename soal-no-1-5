@@ -1,0 +1,122 @@
+#soal no 1
+package com.juaracoding.khevinujian1.jf.ujian1;
+
+public class Soal1 {
+    public static void main(String[] args) {
+        // Informasi tentang tiket bioskop
+        String namaFilm = "Avengers: Endgame";
+        int hargaTiket = 50000;
+        int jumlahTiket = 3;
+
+        // Output ke layar
+        System.out.println("Nama Film: " + namaFilm);
+        System.out.println("Harga Tiket: " + hargaTiket);
+        System.out.println("Jumlah Tiket: " + jumlahTiket);
+}
+}
+
+#soal no 2
+package com.juaracoding.khevinujian1.jf.ujian1;
+import java.util.Scanner;
+
+    public class soal2 {
+        public static void main(String[] args) {
+            // Membuat scanner untuk input
+            Scanner scanner = new Scanner(System.in);
+
+            // Meminta input nama film dari pengguna
+            System.out.print("Masukkan nama film: ");
+            String namaFilm = scanner.nextLine();
+
+            // Mengubah nama film menjadi huruf besar
+            String namaFilmHurufBesar = namaFilm.toUpperCase();
+
+            // Menampilkan output
+            System.out.println("Nama film dalam huruf besar: " + namaFilmHurufBesar);
+
+            // Menutup scanner
+            scanner.close();
+        }
+    }
+
+    #soal no 3
+    package com.juaracoding.khevinujian1.jf.ujian1;
+import java.util.Scanner;
+
+public class soal3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Harga tiket
+        final int WEEKDAY_PRICE = 35000;
+        final int WEEKEND_PRICE = 45000;
+
+        // Input jumlah tiket dan jenis hari
+        System.out.print("Masukkan jumlah tiket: ");
+        int jumlahTiket = scanner.nextInt();
+
+        System.out.print("Apakah ini hari weekend? (true/false): ");
+        boolean isWeekend = scanner.nextBoolean();
+
+        // Menentukan harga per tiket berdasarkan hari
+        int hargaPerTiket = isWeekend ? WEEKEND_PRICE : WEEKDAY_PRICE;
+
+        // Menghitung total harga sebelum diskon
+        int totalHarga = jumlahTiket * hargaPerTiket;
+
+        // Memberikan diskon jika jumlah tiket lebih dari 5
+        if (jumlahTiket > 5) {
+            totalHarga = (int) (totalHarga * 0.9); // Diskon 10%
+        }
+
+        // Output hasil
+        System.out.println("Jumlah tiket: " + jumlahTiket);
+        System.out.println("Total harga (dengan diskon): " + totalHarga);
+    }
+}
+
+
+#soal no 4
+package com.juaracoding.khevinujian1.jf.ujian1;
+import java.util.Scanner; // Mengimpor kelas Scanner untuk membaca input dari pengguna
+
+public class soal4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // Membuat objek Scanner untuk membaca input
+        String[] films = new String[5]; // Membuat array dengan ukuran 5 untuk menyimpan nama-nama film
+
+        // Memasukkan nama-nama film ke dalam array
+        System.out.println("Daftar film bioskop");
+        for (int i = 0; i < films.length; i++) {
+            System.out.print("Masukkan nama film " + (i + 1) + ": ");
+            films[i] = scanner.nextLine();
+        }
+
+        // Menampilkan daftar film yang ingin ditonton
+        System.out.println("\nFilm yang ingin ditonton:");
+        for (int i = 0; i < films.length; i++) {
+            System.out.println((i + 1) + ". " + films[i]);
+        }
+    }
+}
+
+
+#soal no 5
+package com.juaracoding.khevinujian1.jf.ujian1;
+
+public class soal5 {
+        public static void main(String[] args) {
+            // Array untuk menyimpan harga tiket
+            int[] ticketPrices = {50000, 60000, 70000, 80000, 90000}; // Array berisi harga tiket setiap film
+            int totalPrice = 0; // Variabel untuk menyimpan total harga tiket, diinisialisasi ke 0
+
+            // Menampilkan harga tiket setiap film
+            for (int i = 0; i < ticketPrices.length; i++) { // Loop untuk memproses setiap harga tiket
+                System.out.println("Harga tiket film " + (i + 1) + ": " + ticketPrices[i]); // Menampilkan harga tiket
+                totalPrice += ticketPrices[i]; // Menambahkan harga tiket ke total harga
+            }
+
+            // Menampilkan total harga tiket
+            System.out.println("Total harga tiket: " + totalPrice); // Menampilkan total harga tiket
+        }
+    }
