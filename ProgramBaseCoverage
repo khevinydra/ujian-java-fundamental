@@ -1,0 +1,43 @@
+package com.juaracoding.khevinujian1.jf.ujian1;
+
+import java.util.Scanner;
+
+public class ProgramBaseCoverage {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Meminta input dari pengguna untuk jumlah coverage
+        System.out.print("Masukkan Jumlah Coverage: ");
+        double baseCoverage = input.nextDouble();
+
+        // Diketahui
+        double price = 216860;        // Total biaya tinta
+        double CMY = 7500;           // Halaman untuk 40ml tinta CMY
+        double K = 4500;             // Halaman untuk 40ml tinta K
+        double constantBaseCoverage = 5; // Base coverage konstan 5%
+
+        // Menghitung hasil base coverage
+        double hasilBaseCoverage = baseCoverage / constantBaseCoverage;
+
+        // Menghitung rata-rata halaman per coverage
+        double cmyk = (CMY + K) / 2;
+
+        // Menghitung pageDiv
+        double pageDiv = cmyk / hasilBaseCoverage;
+
+        // Menghitung harga per halaman
+        double result = price / pageDiv;
+
+        // Membulatkan ke atas hasil akhir
+        int resultFinal = (int) Math.ceil(result);
+
+        // Menampilkan hasil
+        System.out.println("Hasil Base Coverage = " + hasilBaseCoverage);
+        System.out.println("Hasil CMYK = " + cmyk);
+        System.out.println("PageDiv adalah = " + pageDiv);
+        System.out.println("Hasil Result adalah = " + result);
+        System.out.println("Hasil Final Result adalah = " + resultFinal);
+
+        input.close();
+    }
+}
